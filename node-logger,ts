@@ -1,8 +1,11 @@
 import {createLogger, format, transports} from 'winston';
 import path from 'path';
 import 'winston-daily-rotate-file';
-import {ErrorMessages} from 'constants/error_constants';
 import * as nodeUtil from 'util';
+
+const ErrorMessages = {
+    LOG_ERROR_MESSAGE: 'ERROR occurred in $tag.$functionName',
+};
 
 interface ILogger {
     error?(Tag, functionName: string, error: any): void;
